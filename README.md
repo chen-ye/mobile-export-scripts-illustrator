@@ -33,12 +33,12 @@ Selected Directory
 |   ├───app-icon@2x.png
 |   └───app-icon@3x.png
 └───Windows
-    ├───4x
-    |   └───app-icon.png
-    ├───2x
-    |   └───app-icon.png
-    └───1x
-        └───app-icon.png
+    ├───app-icon.scale-80.png
+    ├───app-icon.scale-100.png
+    ├───app-icon.scale-140.png
+    ├───app-icon.scale-180.png
+    ├───app-icon.scale-200.png
+    └───app-icon.scale-400.png
 ```
 
 The baseline image used for Android is `mdpi`, for iOS it is `default`. The script will scale up and down from these sizes.
