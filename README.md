@@ -34,7 +34,7 @@ Selected Directory
     └───app-icon@3x.png
 ```
 
-The baseline image used for Android is `xhdpi`, for iOS it is `@2x`. The script will scale up and down from these sizes.
+The baseline image used for Android is `mdpi`, for iOS it is `default`. The script will scale up and down from these sizes.
 
 
 License
