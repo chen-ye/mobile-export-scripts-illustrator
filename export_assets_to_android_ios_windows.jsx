@@ -91,8 +91,8 @@ if(document && folder) {
     var osGroup = dialog.add("group");
 
     var androidCheckboxes = createSelectionPanel("Android", androidExportOptions, osGroup);
-    var iosCheckboxes = createSelectionPanel("iOS", iosExportOptions, osGroup
-    var windowsCheckboxes = createSelectionPanel("Windows", windowsExportOptions, osGroup)
+    var iosCheckboxes = createSelectionPanel("iOS", iosExportOptions, osGroup);
+    var windowsCheckboxes = createSelectionPanel("Windows", windowsExportOptions, osGroup);
 
     var buttonGroup = dialog.add("group");
     var okButton = buttonGroup.add("button", undefined, "Export");
