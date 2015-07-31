@@ -6,27 +6,27 @@ var selectedExportOptions = {};
 var androidExportOptions = [
     {
         name: "mdpi",
-        scaleFactor: 50,
-        type: "android"
-    },
-    {
-        name: "hdpi",
-        scaleFactor: 75,
-        type: "android"
-    },
-    {
-        name: "xhdpi",
         scaleFactor: 100,
         type: "android"
     },
     {
-        name: "xxhdpi",
+        name: "hdpi",
         scaleFactor: 150,
         type: "android"
     },
     {
-        name: "xxxhdpi",
+        name: "xhdpi",
         scaleFactor: 200,
+        type: "android"
+    },
+    {
+        name: "xxhdpi",
+        scaleFactor: 300,
+        type: "android"
+    },
+    {
+        name: "xxxhdpi",
+        scaleFactor: 400,
         type: "android"
     }
 ];
@@ -34,17 +34,17 @@ var androidExportOptions = [
 var iosExportOptions = [
     {
         name: "",
-        scaleFactor: 50,
-        type: "ios"
-    },
-    {
-        name: "@2x",
         scaleFactor: 100,
         type: "ios"
     },
     {
+        name: "@2x",
+        scaleFactor: 200,
+        type: "ios"
+    },
+    {
         name: "@3x",
-        scaleFactor: 150,
+        scaleFactor: 300,
         type: "ios"
     }
 ];
@@ -89,8 +89,8 @@ function exportToFile(scaleFactor, resIdentifier, os) {
 
 	if (!expFolder.exists) {
 		expFolder.create();
-	}
 
+	}
 	for (i = document.artboards.length - 1; i >= 0; i--) {
 		document.artboards.setActiveArtboardIndex(i);
 		ab = document.artboards[i];
