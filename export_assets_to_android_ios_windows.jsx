@@ -33,7 +33,7 @@ var androidExportOptions = [
 
 var iosExportOptions = [
     {
-        name: "",
+        name: "[@1x]",
         scaleFactor: 100,
         type: "ios"
     },
@@ -49,6 +49,39 @@ var iosExportOptions = [
     }
 ];
 
+var windowsExportOptions = [
+    {
+		name: "scale-80",
+		scaleFactor: 80,
+		type: "windows"
+	},
+    {
+		name: "scale-100",
+		scaleFactor: 100,
+		type: "windows"
+	},
+	{
+		name: "scale-140",
+		scaleFactor: 140,
+		type: "windows"
+	},
+	{
+		name: "scale-180",
+		scaleFactor: 180,
+		type: "windows"
+	},
+	{
+		name: "scale-200",
+		scaleFactor: 200,
+		type: "windows"
+	},
+	{
+		name: "scale-400",
+		scaleFactor: 400,
+		type: "windows"
+	}
+]
+
 var folder = Folder.selectDialog("Select export directory");
 var document = app.activeDocument;
 
@@ -57,7 +90,8 @@ if(document && folder) {
     var osGroup = dialog.add("group");
 
     var androidCheckboxes = createSelectionPanel("Android", androidExportOptions, osGroup);
-    var iosCheckboxes = createSelectionPanel("iOS", iosExportOptions, osGroup);
+    var iosCheckboxes = createSelectionPanel("iOS", iosExportOptions, osGroup
+    var windowsCheckboxes = createSelectionPanel("Windows", windowsExportOptions, osGroup)
 
     var buttonGroup = dialog.add("group");
     var okButton = buttonGroup.add("button", undefined, "Export");
@@ -86,6 +120,8 @@ function exportToFile(scaleFactor, resIdentifier, os) {
         expFolder = new Folder(folder.fsName + "/drawable-" + resIdentifier);
     else if(os === "ios")
         expFolder = new Folder(folder.fsName + "/iOS");
+    else if(os === "windows")
+        expFolder = new Folder(folder.fsName + "/windows")
 
 	if (!expFolder.exists) {
 		expFolder.create();
@@ -99,7 +135,8 @@ function exportToFile(scaleFactor, resIdentifier, os) {
             file = new File(expFolder.fsName + "/" + ab.name + ".png");
         else if(os === "ios")
             file = new File(expFolder.fsName + "/" + ab.name + resIdentifier + ".png");
-            
+        else if(os === "windows")
+            files = new FIle(expFolder.fsName + "/" + ab.name + "." + resIdentifier + ".png")
             options = new ExportOptionsPNG24();
             options.transparency = true;
             options.artBoardClipping = true;
