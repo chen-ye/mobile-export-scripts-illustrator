@@ -1,5 +1,6 @@
 /**
 * Author: austynmahoney (https://github.com/austynmahoney)
+* Windows UWP support added by Chen Ye (https://github.com/chen-ye)
 */
 var selectedExportOptions = {};
 
