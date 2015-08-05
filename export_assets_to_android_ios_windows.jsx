@@ -137,15 +137,15 @@ function exportToFile(scaleFactor, resIdentifier, os) {
         else if(os === "ios")
             file = new File(expFolder.fsName + "/" + ab.name + resIdentifier + ".png");
         else if(os === "windows")
-            files = new FIle(expFolder.fsName + "/" + ab.name + "." + resIdentifier + ".png")
-            options = new ExportOptionsPNG24();
-            options.transparency = true;
-            options.artBoardClipping = true;
-            options.antiAliasing = true;
-            options.verticalScale = scaleFactor;
-            options.horizontalScale = scaleFactor;
+            file = new File(expFolder.fsName + "/" + ab.name + "." + resIdentifier + ".png");
+        options = new ExportOptionsPNG24();
+        options.transparency = true;
+        options.artBoardClipping = true;
+        options.antiAliasing = true;
+        options.verticalScale = scaleFactor;
+        options.horizontalScale = scaleFactor;
 
-            document.exportFile(file, ExportType.PNG24, options);
+        document.exportFile(file, ExportType.PNG24, options);
 	}
 };
 
