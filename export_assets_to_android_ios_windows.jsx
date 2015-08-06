@@ -56,14 +56,24 @@ var windowsExportOptions = [
 		scaleFactor: 80,
 		type: "windows"
 	},
-    {
+    	{
 		name: "scale-100",
 		scaleFactor: 100,
 		type: "windows"
 	},
 	{
+		name: "scale-125",
+		scaleFactor: 125,
+		type: "windows"
+	},
+	{
 		name: "scale-140",
 		scaleFactor: 140,
+		type: "windows"
+	},
+	{
+		name: "scale-150",
+		scaleFactor: 150,
 		type: "windows"
 	},
 	{
